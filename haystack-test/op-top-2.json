@@ -1,0 +1,116 @@
+{
+    "query": "malaria fever treatments",
+    "no_ans_gap": -5.577052354812622,
+    "answers": [
+        {
+            "answer": "Presumptive (inital) treatment for malaria fever n It should be given to all fever cases if malaria is suspected after taking   blood film wherever possible",
+            "type": "extractive",
+            "score": 0.040137846022844315,
+            "context": "Presumptive (inital) treatment for malaria fever n It should be given to all fever cases if malaria is suspected after taking   blood film wherever possible",
+            "offsets_in_document": [
+                {
+                    "start": 0,
+                    "end": 156
+                }
+            ],
+            "offsets_in_context": [
+                {
+                    "start": 0,
+                    "end": 156
+                }
+            ],
+            "document_ids": [
+                "1b40a9306b661d6b2b4552f8568cc64a"
+            ],
+            "meta": {
+                "name": "book-no-4-page-15.txt"
+            }
+        },
+        {
+            "answer": "headache, bodyache and vomiting. The fever comes down with   profuse sweating and leaves the person with generalized weakness   and discomfort",
+            "type": "extractive",
+            "score": 0.038689810782670975,
+            "context": "with headache, bodyache and vomiting. The fever comes down with   profuse sweating and leaves the person with generalized weakness   and discomfort.  ",
+            "offsets_in_document": [
+                {
+                    "start": 451,
+                    "end": 593
+                }
+            ],
+            "offsets_in_context": [
+                {
+                    "start": 5,
+                    "end": 147
+                }
+            ],
+            "document_ids": [
+                "f51ba3e5019308c3cf17ba9545599e94"
+            ],
+            "meta": {
+                "name": "book-no-4-page-14.txt"
+            }
+        },
+        {
+            "answer": "<p",
+            "type": "extractive",
+            "score": 0.003707310650497675,
+            "context": "imaquine. n Primaquine should not be given to infants and pregnant women n<pWhenever a case of fever is seen without any other sign/symptom   such as",
+            "offsets_in_document": [
+                {
+                    "start": 1120,
+                    "end": 1123
+                }
+            ],
+            "offsets_in_context": [
+                {
+                    "start": 74,
+                    "end": 77
+                }
+            ],
+            "document_ids": [
+                "1b40a9306b661d6b2b4552f8568cc64a"
+            ],
+            "meta": {
+                "name": "book-no-4-page-15.txt"
+            }
+        }
+    ],
+    "documents": [
+        {
+            "content": "Presumptive (inital) treatment for malaria fever n It should be given to all fever cases if malaria is suspected after taking   blood film wherever possible. n It should be given to all persons irrespective of age and sex including   infants and pregnant women. n This is done to destroy the malaria parasites in the blood and give   relief to the person having malaria. n Certain cases of malaria   can be life-threatening   and hence to have radical   treatment after presumptive   (initial) treatment is   important n Anti-malarial drugs should   not be taken on empty   stomach. nNational Vector Bone Disease Control Programme nThe following anti-malaria activities are undertaken by government health   facilities: n Blood sample of patient with fever is collected by the Multi-Purpose   Worker (MPW)/ANM. Thick and thin blood smear are made and   confirmed for malaria parasite. n If found to be positive, the radical (final) treatment is given free of cost   on doctoru00e2u20acu2122s/health workeru00e2u20acu2122s advice. The drugs given are Chloroquine   and Primaquine. n Primaquine should not be given to infants and pregnant women n<pWhenever a case of fever is seen without any other sign/symptom   such as rash/diarrhoea/cough etc. always consider it to be malaria. Give   treatment on that basis.  nAge in   Years  Tablets Chloroquine   Phosphate(150 mg base)   (no. of tablet) ",
+            "content_type": "text",
+            "score": 0.6885462470304801,
+            "meta": {
+                "name": "book-no-4-page-15.txt"
+            },
+            "id_hash_keys": [
+                "content"
+            ],
+            "embedding": "None",
+            "id": "1b40a9306b661d6b2b4552f8568cc64a"
+        },
+        {
+            "content": "<pMalaria is an illness caused   by the presence of malarial   parasite in the human body.   It spreads through the bite of   mosquito. When a mosquito   bites a person suffering from   malaria, the parasite enters   the body of the mosquito.   When the infected mosquito   bites a healthy person then   he/she may develop malaria.  n<pA  p e r s o n  w i t h  m a l a r i a   generally has fever with chills   daily/alternate day, generally   with headache, bodyache and vomiting. The fever comes down with   profuse sweating and leaves the person with generalized weakness   and discomfort.  ",
+            "content_type": "text",
+            "score": 0.6797040509346887,
+            "meta": {
+                "name": "book-no-4-page-14.txt"
+            },
+            "id_hash_keys": [
+                "content"
+            ],
+            "embedding": "None",
+            "id": "f51ba3e5019308c3cf17ba9545599e94"
+        }
+    ],
+    "root_node": "Query",
+    "params": {
+        "Retriever": {
+            "top_k": 2
+        },
+        "Reader": {
+            "top_k": 10
+        }
+    },
+    "node_id": "Reader"
+}

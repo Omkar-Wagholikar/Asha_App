@@ -5,7 +5,14 @@ import requests
 import json
 
 from base.models import QueryLog
-from .serializers import QuerySerializer
+from .serializers import *
+
+from django.http import FileResponse, HttpResponse
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+import os
 
 @api_view(['GET'])
 def getData(request):
@@ -28,47 +35,19 @@ def answer(request):
     print({"query":request.data["query"]})
     x = requests.post("http://127.0.0.1:8000/check/", json = request.data)
     print(x.text)
-
-    y = {
-        "query": "malaria",
-        "answers": [
-            {
-                "answer": "<p>Malaria is an illness caused   by the presence of malarial   parasite in the human body",
-                "context": "<p>Malaria is an illness caused   by the presence of malarial   parasite in the human body.   It spreads through the bite of   mosquito. When a mosqui",
-                "offsets_in_document": {
-                    "start": 0,
-                    "end": 90
-                },
-                "score": 0.023250412195920944,
-                "meta": {
-                    "name": "book-no-4-page-14.txt"
-                }
-            },
-            {
-                "answer": "blood film",
-                "context": "ld be given to all fever cases if malaria is suspected after taking   blood film wherever possible. \n It should be given to all persons irrespective o",
-                "offsets_in_document": {
-                    "start": 128,
-                    "end": 138
-                },
-                "score": 0.010698412545025349,
-                "meta": {
-                    "name": "book-no-4-page-15.txt"
-                }
-            },
-            {
-                "answer": "<p>",
-                "context": "imaquine. \n Primaquine should not be given to infants and pregnant women \n<p>Whenever a case of fever is seen without any other sign/symptom   such as",
-                "offsets_in_document": {
-                    "start": 1120,
-                    "end": 1123
-                },
-                "score": 0.0016254261136054993,
-                "meta": {
-                    "name": "book-no-4-page-15.txt"
-                }
-            }
-        ]
-    }
-    
     return Response(x.json())
+
+
+class PdfFileView(APIView):
+    def get(self, request, filename):
+        # short_report = open("F:/Asha/Asha_drf/Asha_Srv/pdf_files/book-no-1-page-2.pdf", 'rb')
+        # response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
+        # return FileResponse(filename="F:/Asha/Asha_drf/Asha_Srv/pdf_files/book-no-1-page-2.pdf")
+        print(os.getcwd())
+        import base64
+        short_report = open( os.getcwd() + f"/pdf_files/{filename}", 'rb')
+        report_encoded = base64.b64encode(short_report.read())
+        return Response({
+            'detail': filename, 
+            'filename': report_encoded
+            })

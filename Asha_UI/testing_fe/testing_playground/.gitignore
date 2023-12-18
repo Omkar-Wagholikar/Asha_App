@@ -42,3 +42,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+/assets/image/s1.pdf
+/assets/image/s2.pdf
+/assets/image/s3.pdf
+/assets/image/sample.pdf
+/assets/pdfs/book-no-1.pdf

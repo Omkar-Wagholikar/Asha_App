@@ -1,0 +1,24 @@
+58    |    Module for ASHA on Non-Communicable Diseases 
+
+Part B) Individual Health Record  
+
+Individual Name  
+Individual ID 
+
+A. History 
+
+Known Medical Illness   for NCDs  Date of Diagnosis   Treatment  Any Complications   Others  
+Currently under   treatment  Discontinued  
+
+B. Screening for NCD 
+
+Screened for (specify date on which screening was done)  Screening Result  Risk   Factors   Other -    Remarks  
+Hypertension  Diabetes Oral   Cancer  Breast   Cancer   Cervical   Cancer  COPD   (Respiratory   Disorders) 
+Hypertension Diabetes Oral   Cancer  Breast   Cancer   Cervical   Cancer  COPD   (Respiratory   Disorders) 
+
+C. Treatment Details 
+
+Condition Date of   Diagnosis  Treatment Initiation  Treatment Compliance -  Currently on Treatment  Treatment Discontinued   Other -    Remarks 
+Health   Facility   Date Details Health   Facility   Date of   Visit   Supply of Medicine   Received – Monthly  Side Effects/  Complications  
+(if any) 
+Reasons for   Discontinuation  Date of   Discontinuation  

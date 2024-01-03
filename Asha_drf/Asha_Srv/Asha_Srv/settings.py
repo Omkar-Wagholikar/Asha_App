@@ -59,7 +59,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:59842',
     'http://localhost:50128',
     'http://localhost:57623',
-    
+    'http://localhost:58623',
+
 ]
 
 ROOT_URLCONF = 'Asha_Srv.urls'

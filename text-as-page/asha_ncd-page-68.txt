@@ -1,0 +1,16 @@
+
+60    |    Module for ASHA on Non-Communicable Diseases 
+
+Part B: Early Detection: Ask if Patient has any of these Symptoms 
+B1: Women and Men  Yes/No  B2: Women only  Yes/No 
+Shortness of breath   Lump in the breast 
+Coughing more than 2 weeks  Blood stained discharge from the   nipple 
+Blood in sputum  Change in shape and size of breast 
+History of fits  Bleeding between periods 
+Difficulty in opening mouth  Bleeding after menopause 
+Ulcers/patch/growth in the mouth that has   not healed in two weeks  Bleeding after intercourse 
+Any change in the tone of your voice  Foul smelling vaginal discharge 
+In case the individual answers Yes to any one of the above-mentioned symptoms, refer the patient   immediately to the nearest facility where a Medical Officer is available.  
+Part C: Circle all that Apply  
+Type of Fuel used for cooking – Firewood/Crop Residue/Cow dung cake/Coal/Kerosene 
+Occupational exposure – Crop residue burning/burning of garbage – leaves/working in industries with smoke,   gas and dust exposure such as brick kilns and glass factories etc 

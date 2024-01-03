@@ -1,0 +1,51 @@
+
+Simple Skills that Save Lives 
+82 
+
+ASHA Module 7 
+
+Annexe 7: Treatment Guidelines for ASHA 
+
+Age-specific Drug Schedules  
+
+1. Chloroquine tablets (150 mg base) 
+
+Age (in years)  Day 1  Day 2  Day -3 
+Tab. Chloroquine  Tab. Chloroquine  Tab. Chloroquine 
+<1  1/2  1/2  1/4 
+1-4  1  1  ½1/2 
+5-8  2  2  1 
+9-14  3  3  1 
+1/2 
+
+15 & above  4  4  2 
+
+2. Primaquine tablets  (7.5 or 2.5 mg base) 
+
+Age (in years)  P. falciparum  P. vivax 
+Primaquine 0.75 mg/kg   on day 1   Primaquine 0.25 mg/kg daily   dose for 14 days* 
+mg base  No. of Tablets   (7.5  mg base)  mg base  No. of Tablets  (2.5 mg base) 
+<1  Nil  0  Nil  Nil 
+1-4  7.5  1  2.5  1 
+5-8  15  2  5.0  2 
+9-14  30  4  10.0  4 
+15 & above   45  6  15.0  6 
+ * Primaquine is contraindicated in children under one year and pregnant women.  
+
+3. Artesunate 50 mg tablets + Sulfadoxine-Pyrimethamine 500 + 25 mg   tablets (ACT) combination  
+
+Age (in years)  1
+st
+ Day  (number of tabs)*  2
+nd
+ Day  (number of tabs)  3
+rd
+ Day  (number of tabs) 
+<1 Year*  AS  SP  ½1/2  1/4  1/2  Nil  1/2  Nil 
+1-4 Yeas*  AS  SP  1  1  1  Nil  1  Nil 
+5-8 Year*  AS  SP  2  1
+1/2 
+2  Nil  2  Nil 
+9-14 Year*  AS  SP  3  2  3  Nil  3  Nil 
+15 and above  AS  SP  4  3  4  Nil  4  Nil 
+* till such time as age-wise blister packs are made available for all age groups 

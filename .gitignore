@@ -1,6 +1,6 @@
 venv/
 elasticsearch-8.10.4-windows-x86_64/
-text-as-page/
+# text-as-page/
 pdf-pages/
 Asha_pdfs/
 legacy/

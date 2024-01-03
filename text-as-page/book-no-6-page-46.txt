@@ -1,0 +1,23 @@
+
+Part C 
+
+Newborn Health 
+45 
+
+Stillbirth Decision Tree Examination at 30 seconds 
+Examination at 5 minutes 
+
+Cry  Limb Movement  Breathing 
+Cry  Limb Movement  Breathing 
+Still Birth 
+no  no  no 
+no  no  no 
+
+Examination at 30 seconds 
+Examination at 5 minutes 
+
+Cry  Limb Movement  Breathing 
+Cry  Limb Movement  Breathing 
+Live Birth 
+yes  yes  yes 
+no  no  no 

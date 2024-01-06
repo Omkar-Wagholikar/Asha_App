@@ -3,7 +3,6 @@ import 'package:asha_fe/constants/theme.dart';
 import 'package:asha_fe/web_exp.dart';
 import 'package:flutter/material.dart';
 import 'MainPage.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.appTheme),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Asha Demo App'),
       home: const MyHomePage(title: 'Asha Demo App'),
     );
   }
@@ -41,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(
+      appBar: const AshaAppBar(
           appBarText: 'Asha App', appBarIconPath: "assets/images/PKC-logo.png"),
       body: const MainPage(),
       floatingActionButton: FloatingActionButton(

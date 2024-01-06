@@ -1,38 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:localstorage/localstorage.dart';
 import '../constants/theme.dart';
 
-class appBar extends StatelessWidget implements PreferredSizeWidget {
+class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarText;
   final String appBarIconPath;
 
-  const appBar(
+  const AshaAppBar(
       {super.key, required this.appBarText, required this.appBarIconPath});
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-  void _showDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text("Alert!!"),
-          content: const Text("You are awesome!"),
-          actions: [
-            MaterialButton(
-              child: const Text("OK"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 4.0,
+      elevation: 4,
       backgroundColor: AppColors.appBar,
       leading: Padding(
         padding: const EdgeInsets.all(2.0),
@@ -64,6 +48,19 @@ class PopUpWidget extends StatelessWidget {
         // PopupMenuItem 1
         PopupMenuItem(
           value: 1,
+          // row with two children
+          child: Row(
+            children: [
+              Icon(AppIcons.readPdfs),
+              const SizedBox(
+                width: 10,
+              ),
+              const Text("Read PDF's")
+            ],
+          ),
+        ),
+        PopupMenuItem(
+          value: 2,
           // row with 2 children
           child: Row(
             children: [
@@ -77,7 +74,7 @@ class PopUpWidget extends StatelessWidget {
         ),
         // PopupMenuItem 2
         PopupMenuItem(
-          value: 2,
+          value: 3,
           // row with two children
           child: Row(
             children: [
@@ -97,9 +94,12 @@ class PopUpWidget extends StatelessWidget {
       onSelected: (value) {
         // if value 1 show dialog
         if (value == 1) {
+        } else if (value == 2) {
+          print("Updating links");
           _showLinkUpdate(context);
           // if value 2 show dialog
-        } else if (value == 2) {
+        } else if (value == 3) {
+          print("Reporting errors");
           _showReportError(context);
         }
       },
@@ -121,9 +121,11 @@ class PopUpWidget extends StatelessWidget {
           actions: [
             MaterialButton(
               child: const Text("OK"),
-              onPressed: () {
+              onPressed: () async {
                 if (linkController.text != "") {
-                  print(linkController.text);
+                  final LocalStorage storage = LocalStorage('url.json');
+                  await storage.setItem('_url', linkController.text);
+                  log(linkController.text + "saved");
                   Navigator.of(context).pop();
                 } else {
                   linkController.text = "please provide link";

@@ -8,6 +8,7 @@ class AppColors {
 }
 
 class AppIcons {
+  static IconData readPdfs = Icons.book;
   static IconData appBarMenu = Icons.more_vert;
   static IconData updateLinkPopUp = Icons.link;
   static IconData errorPopUp = Icons.error_outline_outlined;

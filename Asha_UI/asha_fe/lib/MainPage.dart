@@ -1,6 +1,9 @@
 import 'dart:convert';
+import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:localstorage/localstorage.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 import 'ResultTile.dart';
 
@@ -24,8 +27,9 @@ class _MainPageState extends State<MainPage> {
 
   Future<Map<String, dynamic>> fetchData() async {
     try {
-      final uri =
-          Uri.parse('https://ee63-182-156-134-162.ngrok-free.app/answer/');
+      final LocalStorage storage = new LocalStorage('url.json');
+      print(await storage.getItem('_url'));
+      final uri = Uri.parse(await storage.getItem('_url') + '/answer/');
 
       Map<String, dynamic> body = {"query": queryController.text};
       var response = await http.post(
@@ -82,6 +86,28 @@ class _MainPageState extends State<MainPage> {
                     },
                     child: const Text('Search'),
                   ),
+                  TextButton(
+                    child: const Text("sfpdfv_network"),
+                    onPressed: () {
+                      // String path = "assets/images/sample.pdf";
+                      String path = "assets/pdfs/book-no-1-page-12.pdf";
+                      if (path.isNotEmpty) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Scaffold(
+                                    appBar: AppBar(
+                                      title: const Text('PDF Viewer'),
+                                    ),
+                                    body: SfPdfViewer.asset(path),
+                                  )),
+                        );
+                      } else {
+                        print(
+                            "====================== ate mud ====================");
+                      }
+                    },
+                  ),
                 ],
               ),
             ),
@@ -99,29 +125,27 @@ class _MainPageState extends State<MainPage> {
                     ],
                   );
                 } else if (snapshot.hasError) {
-                  return Center(
+                  return const Center(
                       child: Text('Please update link or report error'));
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return const Center(child: Text('No data available'));
                 } else {
                   List<dynamic> temp = snapshot.data!["answers"];
-                  List<String> fin1 = [];
-
-                  temp.forEach((element) {
-                    fin1.add(element["answer"]);
-                  });
-
+                  String mainText, addnInfo, pageInfo;
                   return ListView.builder(
                     shrinkWrap: true, // Set shrinkWrap to true
                     physics:
                         const NeverScrollableScrollPhysics(), // Disable scrolling
                     itemCount: temp.length,
                     itemBuilder: (context, index) {
+                      mainText = temp[index]["answer"];
+                      addnInfo = temp[index]["context"];
+                      pageInfo = temp[index]["meta"]["name"].toString();
                       return ExpandableCard(
-                        mainText: fin1[index],
-                        additionalInfo: temp[index]["context"],
+                        mainText: mainText,
+                        additionalInfo: addnInfo,
                         pageInfo:
-                            temp[index]["meta"]["name"].toString() + " >>",
+                            "${pageInfo.length > 5 ? pageInfo.substring(0, pageInfo.length - 4) : "Error"} >>",
                       );
                     },
                   );

@@ -25,10 +25,11 @@ def clearFolder(folder_path):
 
     print("All files in the folder have been deleted.")
 
-readPath = "C:/Users/DELL/Desktop/Asha/pdfs/"
-writePath = "C:/Users/DELL/Desktop/Asha/pdf-pages"
+readPath = "F:/Asha/Asha_pdfs/pdfs/"
+writePath = "F:/Asha/Asha_ui/asha_fe/assets/pdfs"
 
 clearFolder(writePath)
+# splitPages(readPath, writePath, "asha_ncd.pdf")
 for i in range(1, 8):
     print(i)
     splitPages(readPath, writePath, "book-no-" + str(i) + ".pdf")

@@ -19,7 +19,7 @@ class QueryModel:
             password="GPvaCsQYvSnI_EkU3vLV", # on board password
             # password="0MNn3loYMbrQrsBz_yDR", # hard drive password
             # index="test-book-no-134",
-            index="test-book-no-all",
+            index="full-clean-1",
             verify_certs=True,  # Set this to True if you want to verify the SSL certificate
             # ssl_show_warn=False,  # Set this to False if you don't want to show SSL warnings
         )

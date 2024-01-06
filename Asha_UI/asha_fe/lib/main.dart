@@ -1,3 +1,4 @@
+import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/web_exp.dart';
 import 'package:flutter/material.dart';
 import 'MainPage.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Asha App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Asha Demo App'),
@@ -39,14 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Center(
-            child: Text(
-          widget.title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 34),
-        )),
-      ),
+      appBar: appBar(
+          appBarText: 'Asha App', appBarIconPath: "assets/images/PKC-logo.png"),
       body: const MainPage(),
       floatingActionButton: FloatingActionButton(
           onPressed: () => {

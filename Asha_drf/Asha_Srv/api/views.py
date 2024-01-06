@@ -34,7 +34,7 @@ def addQuery(request):
 @api_view(["POST", "GET"])
 def answer(request):
     print({"query":request.data["query"]})
-    x = requests.post("http://127.0.0.1:8000/check/", json = request.data)
+    x = requests.post("http://127.0.0.1:7000/check/", json = request.data)
     print(x.text)
     return Response(x.json())
 

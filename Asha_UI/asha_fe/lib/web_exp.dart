@@ -19,8 +19,6 @@ import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 // #enddocregion platform_imports
 
-void main() => runApp(const MaterialApp(home: WebViewExample()));
-
 const String kNavigationExamplePage = '''
 <!DOCTYPE html><html>
 <head><title>Navigation Delegate Example</title></head>
@@ -183,7 +181,8 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse(
+          'https://2a2f-182-156-134-162.ngrok-free.app/api/pdf/book-no-1-page-1.pdf/'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ExpandableCard extends StatefulWidget {
   final String mainText;
   final String additionalInfo;
+  final String pageInfo;
 
-  ExpandableCard({required this.mainText, required this.additionalInfo});
+  ExpandableCard(
+      {required this.mainText,
+      required this.additionalInfo,
+      required this.pageInfo});
 
   @override
   _ExpandableCardState createState() => _ExpandableCardState();
@@ -22,8 +27,8 @@ class _ExpandableCardState extends State<ExpandableCard> {
         });
       },
       child: Container(
-        margin: EdgeInsets.all(16),
-        padding: EdgeInsets.all(16),
+        margin: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -31,31 +36,44 @@ class _ExpandableCardState extends State<ExpandableCard> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               widget.mainText,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             if (isExpanded)
               Container(
-                margin: EdgeInsets.symmetric(
+                margin: const EdgeInsets.symmetric(
                     vertical: 8), // Adjust the margin values
                 child: Text(
                   widget.additionalInfo,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
+                  ),
+                ),
+              ),
+            if (isExpanded)
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 8), // Adjust the margin values
+                child: Text(
+                  widget.pageInfo,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                    color: Colors.blue,
                   ),
                 ),
               ),

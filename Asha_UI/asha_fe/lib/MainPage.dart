@@ -24,7 +24,8 @@ class _MainPageState extends State<MainPage> {
 
   Future<Map<String, dynamic>> fetchData() async {
     try {
-      final uri = Uri.parse('http://127.0.0.1:7000/answer/');
+      final uri =
+          Uri.parse('https://ee63-182-156-134-162.ngrok-free.app/answer/');
 
       Map<String, dynamic> body = {"query": queryController.text};
       var response = await http.post(
@@ -48,15 +49,15 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SingleChildScrollView(
-      child: Container(
-        // Set the height of the container or use Expanded
-        height: height, // Replace 'height' with the actual height you want
+    return Container(
+      // Set the height of the container or use Expanded
+      height: height, // Replace 'height' with the actual height you want
+      child: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(50.0),
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
@@ -98,7 +99,8 @@ class _MainPageState extends State<MainPage> {
                     ],
                   );
                 } else if (snapshot.hasError) {
-                  return Center(child: Text('Error: ${snapshot.error}'));
+                  return Center(
+                      child: Text('Please update link or report error'));
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return const Center(child: Text('No data available'));
                 } else {
@@ -118,6 +120,8 @@ class _MainPageState extends State<MainPage> {
                       return ExpandableCard(
                         mainText: fin1[index],
                         additionalInfo: temp[index]["context"],
+                        pageInfo:
+                            temp[index]["meta"]["name"].toString() + " >>",
                       );
                     },
                   );

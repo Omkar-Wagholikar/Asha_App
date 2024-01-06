@@ -1,15 +1,16 @@
+import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ExpandableCard extends StatefulWidget {
   final String mainText;
   final String additionalInfo;
-  final String pageInfo;
+  final String pageName;
 
   ExpandableCard(
       {required this.mainText,
       required this.additionalInfo,
-      required this.pageInfo});
+      required this.pageName});
 
   @override
   _ExpandableCardState createState() => _ExpandableCardState();
@@ -68,13 +69,21 @@ class _ExpandableCardState extends State<ExpandableCard> {
               Container(
                 margin: const EdgeInsets.symmetric(
                     vertical: 8), // Adjust the margin values
-                child: Text(
-                  widget.pageInfo,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    decoration: TextDecoration.underline,
-                    color: Colors.blue,
-                  ),
+                child: TextButton(
+                  onPressed: () {
+                    print("pageName: " + widget.pageName);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                PDFpage(path: widget.pageName)));
+                  },
+                  child: Text(widget.pageName,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue,
+                      )),
                 ),
               ),
           ],

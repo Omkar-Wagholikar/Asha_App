@@ -3,7 +3,6 @@ import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:localstorage/localstorage.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 import 'ResultTile.dart';
 
@@ -27,7 +26,7 @@ class _MainPageState extends State<MainPage> {
 
   Future<Map<String, dynamic>> fetchData() async {
     try {
-      final LocalStorage storage = new LocalStorage('url.json');
+      final LocalStorage storage = LocalStorage('url.json');
       print(await storage.getItem('_url'));
       final uri = Uri.parse(await storage.getItem('_url') + '/answer/');
 
@@ -90,22 +89,11 @@ class _MainPageState extends State<MainPage> {
                     child: const Text("sfpdfv_network"),
                     onPressed: () {
                       // String path = "assets/images/sample.pdf";
-                      String path = "assets/pdfs/book-no-1-page-12.pdf";
-                      if (path.isNotEmpty) {
-                        Navigator.push(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Scaffold(
-                                    appBar: AppBar(
-                                      title: const Text('PDF Viewer'),
-                                    ),
-                                    body: SfPdfViewer.asset(path),
-                                  )),
-                        );
-                      } else {
-                        print(
-                            "====================== ate mud ====================");
-                      }
+                              builder: (context) =>
+                                  const PDFpage(path: "book-no-1-page-12")));
                     },
                   ),
                 ],
@@ -144,8 +132,9 @@ class _MainPageState extends State<MainPage> {
                       return ExpandableCard(
                         mainText: mainText,
                         additionalInfo: addnInfo,
-                        pageInfo:
-                            "${pageInfo.length > 5 ? pageInfo.substring(0, pageInfo.length - 4) : "Error"} >>",
+                        pageName: pageInfo.length > 5
+                            ? pageInfo.substring(0, pageInfo.length - 4)
+                            : "Error",
                       );
                     },
                   );

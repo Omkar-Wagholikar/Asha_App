@@ -1,4 +1,5 @@
 import 'package:asha_fe/Components/appbar.dart';
+import 'package:asha_fe/constants/theme.dart';
 import 'package:asha_fe/web_exp.dart';
 import 'package:flutter/material.dart';
 import 'MainPage.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Asha App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.appTheme),
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Asha Demo App'),

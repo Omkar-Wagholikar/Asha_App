@@ -10,6 +10,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:localstorage/localstorage.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // #docregion platform_imports
@@ -121,7 +122,16 @@ class _WebViewExampleState extends State<WebViewExample> {
   @override
   void initState() {
     super.initState();
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   _init();
+    // });
+    _init().then((value) => setState(
+          () {},
+        ));
+  }
 
+  Future<void> _init() async {
+    final LocalStorage storage = LocalStorage('url.json');
     // #docregion platform_features
     late final PlatformWebViewControllerCreationParams params;
     if (WebViewPlatform.instance is WebKitWebViewPlatform) {
@@ -181,8 +191,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse(
-          'https://2a2f-182-156-134-162.ngrok-free.app/api/pdf/book-no-1-page-1.pdf/'));
+      ..loadRequest(Uri.parse(await storage.getItem('_url')));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {

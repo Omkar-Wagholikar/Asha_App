@@ -1,10 +1,7 @@
-import 'dart:convert';
-import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:localstorage/localstorage.dart';
 
 import 'ResultTile.dart';
+import 'utils/networking.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -21,36 +18,12 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     super.initState();
     // Initialize the futureData in the initState
-    futureData = fetchData();
-  }
-
-  Future<Map<String, dynamic>> fetchData() async {
-    try {
-      final LocalStorage storage = LocalStorage('url.json');
-      print(await storage.getItem('_url'));
-      final uri = Uri.parse(await storage.getItem('_url') + '/answer/');
-
-      Map<String, dynamic> body = {"query": queryController.text};
-      var response = await http.post(
-        uri,
-        body: body,
-      );
-
-      var resp = json.decode(response.body);
-      print("->");
-      print(resp);
-      print("<-");
-      return resp;
-    } catch (e) {
-      print("Caught");
-      print(e);
-      throw e; // rethrow the error to be caught by the FutureBuilder
-    }
+    futureData = Networking.fetchData("");
   }
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    // double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
       // Set the height of the container or use Expanded
@@ -74,27 +47,16 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                   SizedBox(
-                    width: width * 0.05,
+                    height: height * 0.02,
                   ),
                   ElevatedButton(
                     onPressed: () {
                       print('Search');
                       setState(() {
-                        futureData = fetchData();
+                        futureData = Networking.fetchData(queryController.text);
                       });
                     },
                     child: const Text('Search'),
-                  ),
-                  TextButton(
-                    child: const Text("sfpdfv_network"),
-                    onPressed: () {
-                      // String path = "assets/images/sample.pdf";
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const PDFpage(path: "book-no-1-page-12")));
-                    },
                   ),
                 ],
               ),

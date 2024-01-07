@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 import '../constants/theme.dart';
+import '../utils/networking.dart';
 
 class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarText;
@@ -149,6 +150,7 @@ class PopUpWidget extends StatelessWidget {
             MaterialButton(
               child: const Text("OK"),
               onPressed: () {
+                Networking.reportError("app reportedError");
                 Navigator.of(context).pop();
               },
             ),

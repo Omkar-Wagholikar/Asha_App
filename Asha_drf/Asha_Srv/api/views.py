@@ -4,7 +4,8 @@ from rest_framework.decorators import api_view
 import requests
 import json
 
-from base.models import QueryLog
+from base.models import QueryLog, ErrorLog
+
 from .serializers import *
 
 from django.http import FileResponse, HttpResponse
@@ -36,21 +37,47 @@ def answer(request):
     print({"query":request.data["query"]})
     x = requests.post("http://127.0.0.1:7000/check/", json = request.data)
     print(x.text)
+    log = QueryLog()
+    # log.query_text = request.data["query"]
+    # log.answer_text = x.text
+    # log.imageResponse = False
+    try:
+        log.enterData(
+            query_text=request.data["query"], 
+            answer_text=x.text, 
+            imageResponse=False, 
+            user=request.data["user"]
+        )
+    except:
+        log.enterData(
+            query_text=request.data["query"], 
+            answer_text=x.text, 
+            imageResponse=False, 
+            user=""
+        )
+    finally:
+        log.save()
     return Response(x.json())
 
+@api_view(["GET","POST"])
+def reportError(request):
+    print("error received")
+    err = ErrorLog()
+    try:
+        err.enterData(
+            error_text=request.data["error"], 
+            user=request.data["user"]
+        )
+    except:
+        err.enterData(
+            error_text=request.data["error"], user=""
+        )
+    finally:
+        err.save()
+    return Response({"message":"Error has been registered"})
 
 class PdfFileView(APIView):
     def get(self, request, filename):
-        # print(os.getcwd())
-
-        # import base64
-        # short_report = open( os.getcwd() + f"/pdf_files/{filename}", 'rb')
-        # report_encoded = base64.b64encode(short_report.read())
-        # return Response({
-        #     'detail': filename, 
-        #     'filename': report_encoded
-        #     })
-        # pdf_file = get_object_or_404(Path, "F:/Asha/Asha_drf/Asha_Srv/pdf_files/book-no-1-page-2.pdf")
         
         response = FileResponse(open( os.getcwd() + f"/pdf_files/{filename}",'rb'))
         response['Content-Disposition'] = f'inline; filename="{filename}"'

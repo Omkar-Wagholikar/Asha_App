@@ -2,18 +2,18 @@ import 'package:asha_fe/Components/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../ResultTile.dart';
-import '../../web_exp.dart';
-import '../bloc/searching_bloc.dart';
+import '../widgets/result_tile.dart';
+import '../../utils/web_exp.dart';
+import '../bloc/search_bloc.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key});
+class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _SearchPageState extends State<SearchPage> {
   final SearchBloc searchBloc = SearchBloc();
   TextEditingController queryController = TextEditingController();
 

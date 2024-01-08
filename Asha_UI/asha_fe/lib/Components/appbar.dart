@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 import '../constants/theme.dart';
-import '../pdf_page_nav.dart';
+import '../pdf_page_with_nav.dart';
 import '../utils/networking.dart';
 
 class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {

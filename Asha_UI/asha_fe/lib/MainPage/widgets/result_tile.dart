@@ -1,4 +1,4 @@
-import 'package:asha_fe/pdf_page_nav.dart';
+import 'package:asha_fe/pdf_page_with_nav.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableCard extends StatefulWidget {

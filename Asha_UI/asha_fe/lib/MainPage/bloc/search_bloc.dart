@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import '../data/search_model.dart';
 import 'package:flutter/material.dart';
 
-part 'searching_events.dart';
-part 'searching_states.dart';
+part 'search_events.dart';
+part 'search_states.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   SearchBloc() : super(SearchInitial()) {

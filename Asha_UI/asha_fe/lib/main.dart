@@ -1,9 +1,7 @@
-import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/constants/theme.dart';
-import 'package:asha_fe/web_exp.dart';
 import 'package:flutter/material.dart';
 // import 'MainPage.dart';
-import './MainPage/pages/main_page.dart';
+import 'MainPage/pages/search_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
-    return const MainPage();
+    return const SearchPage();
   }
 }

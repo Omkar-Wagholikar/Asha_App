@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ResultTile.dart';
+import 'MainPage/widgets/result_tile.dart';
 import 'utils/networking.dart';
 
 class MainPage extends StatefulWidget {

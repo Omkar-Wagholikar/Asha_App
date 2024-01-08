@@ -1,4 +1,4 @@
-part of 'searching_bloc.dart';
+part of 'search_bloc.dart';
 
 @immutable
 sealed class SearchState {}

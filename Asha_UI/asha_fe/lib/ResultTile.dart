@@ -1,3 +1,4 @@
+import 'package:asha_fe/pdf_page_nav.dart';
 import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +76,7 @@ class _ExpandableCardState extends State<ExpandableCard> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                PDFpage(path: widget.pageName)));
+                                PdfPageWithNav(name: widget.pageName)));
                   },
                   child: Text(widget.pageName,
                       style: const TextStyle(

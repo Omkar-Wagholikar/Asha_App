@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 import '../constants/theme.dart';
+import '../pdf_page_nav.dart';
 import '../utils/networking.dart';
 
 class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -73,10 +74,8 @@ class PopUpWidget extends StatelessWidget {
             ],
           ),
         ),
-        // PopupMenuItem 2
         PopupMenuItem(
           value: 3,
-          // row with two children
           child: Row(
             children: [
               Icon(AppIcons.errorPopUp),
@@ -95,6 +94,7 @@ class PopUpWidget extends StatelessWidget {
       onSelected: (value) {
         // if value 1 show dialog
         if (value == 1) {
+          _showPdfPage(context);
         } else if (value == 2) {
           print("Updating links");
           _showLinkUpdate(context);
@@ -107,6 +107,15 @@ class PopUpWidget extends StatelessWidget {
     );
   }
 
+  void _showPdfPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              const PdfPageWithNav(name: "book-no-2-page-12")),
+    );
+  }
+
   void _showLinkUpdate(BuildContext context) {
     showDialog(
       context: context,
@@ -114,10 +123,8 @@ class PopUpWidget extends StatelessWidget {
         TextEditingController linkController = TextEditingController();
         return AlertDialog(
           title: const Text("Enter Link"),
-          content: Container(
-            child: TextField(
-              controller: linkController,
-            ),
+          content: TextField(
+            controller: linkController,
           ),
           actions: [
             MaterialButton(
@@ -143,15 +150,23 @@ class PopUpWidget extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        TextEditingController errorController = TextEditingController();
         return AlertDialog(
-          title: const Text("Alert!!"),
-          content: const Text("Work in progress!"),
+          title: const Text("Please enter error"),
+          content: TextField(
+            controller: errorController,
+          ),
           actions: [
             MaterialButton(
               child: const Text("OK"),
-              onPressed: () {
-                Networking.reportError("app reportedError");
-                Navigator.of(context).pop();
+              onPressed: () async {
+                if (errorController.text != "") {
+                  Networking.reportError(errorController.text);
+                  print(errorController.text + "saved");
+                  Navigator.of(context).pop();
+                } else {
+                  errorController.text = "please provide link";
+                }
               },
             ),
           ],

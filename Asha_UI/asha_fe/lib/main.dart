@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
           appBarText: 'Asha App', appBarIconPath: "assets/images/PKC-logo.png"),
       body: const MainPage(),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.settings_input_antenna_rounded),
+          child: const Icon(Icons.settings_input_antenna_rounded),
           onPressed: () => {
                 Navigator.push(
                   context,

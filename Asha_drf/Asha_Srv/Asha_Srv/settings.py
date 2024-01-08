@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'corsheaders'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://d1d6-182-156-134-162.ngrok-free.app']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

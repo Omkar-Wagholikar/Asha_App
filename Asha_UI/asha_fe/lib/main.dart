@@ -2,7 +2,8 @@ import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/constants/theme.dart';
 import 'package:asha_fe/web_exp.dart';
 import 'package:flutter/material.dart';
-import 'MainPage.dart';
+// import 'MainPage.dart';
+import './MainPage/pages/main_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,19 +17,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Asha App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.appTheme),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Asha Demo App'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -38,19 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      appBar: const AshaAppBar(
-          appBarText: 'Asha App', appBarIconPath: "assets/images/PKC-logo.png"),
-      body: const MainPage(),
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.settings_input_antenna_rounded),
-          onPressed: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const WebViewExample()),
-                )
-              }),
-    );
+    return const MainPage();
   }
 }

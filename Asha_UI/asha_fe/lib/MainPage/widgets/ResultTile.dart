@@ -1,5 +1,4 @@
 import 'package:asha_fe/pdf_page_nav.dart';
-import 'package:asha_fe/utils/PDFpage.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableCard extends StatefulWidget {
@@ -7,8 +6,9 @@ class ExpandableCard extends StatefulWidget {
   final String additionalInfo;
   final String pageName;
 
-  ExpandableCard(
-      {required this.mainText,
+  const ExpandableCard(
+      {super.key,
+      required this.mainText,
       required this.additionalInfo,
       required this.pageName});
 

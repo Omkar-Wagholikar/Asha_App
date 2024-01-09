@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:asha_fe/utils/networking.dart';
+import 'package:asha_fe/Utils/networking.dart';
 import 'package:bloc/bloc.dart';
 import '../data/search_model.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
 
   FutureOr<void> initialSearchEvent(
       InitialSearchEvent event, Emitter<SearchState> emit) async {
+    print("Initial search event");
     emit(SearchLoadingSuccess(searchModel: SearchModel(answer: {}, query: "")));
   }
 

@@ -1,9 +1,13 @@
 import 'package:asha_fe/Components/appbar.dart';
+import 'package:asha_fe/PdfPage/data/pdf_model.dart';
+import 'package:asha_fe/PdfPage/pages/pdf_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 import '../widgets/result_tile.dart';
-import '../../utils/web_exp.dart';
+import '../../Utils/web_exp.dart';
 import '../bloc/search_bloc.dart';
 
 class SearchPage extends StatefulWidget {
@@ -43,7 +47,7 @@ class _SearchPageState extends State<SearchPage> {
                   child: Column(
                     children: [
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
                             width: 250,
@@ -68,6 +72,19 @@ class _SearchPageState extends State<SearchPage> {
                                   query: queryController.text));
                             },
                             child: const Text('Search'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () async {
+                              // PdfModel model =
+                              //     PdfModel(fileName: "asha_ncd-page-2");
+                              // print(
+                              //     "The pfd isLocal status: ${await model.isLocal()}");
+                              // print(model.nextPdf(true));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>
+                                      PdfPage(fileName: "book-no-1-page-11")));
+                            },
+                            child: const Text('pdf checker'),
                           ),
                           if (state.searchModel.answer.isNotEmpty)
                             BlocProvider.value(

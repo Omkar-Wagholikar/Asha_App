@@ -56,8 +56,7 @@ class _PdfPageWithNavState extends State<PdfPageWithNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AshaAppBar(
-          appBarText: 'Asha App', appBarIconPath: "assets/images/PKC-logo.png"),
+      appBar: const AshaAppBar(),
       body: Center(
         // child: Text(currPdf),
         child: SfPdfViewer.asset("assets/pdfs/$currPdf.pdf"),

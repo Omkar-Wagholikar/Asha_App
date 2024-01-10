@@ -8,7 +8,8 @@ part 'pdf_events.dart';
 part 'pdf_states.dart';
 
 class PdfBloc extends Bloc<PdfEvent, PdfState> {
-  PdfBloc() : super(PdfInitial()) {
+  PdfModel pdfModel;
+  PdfBloc({required this.pdfModel}) : super(PdfInitial()) {
     on<InitialPdfEvent>(initialPdfEvent);
     on<PdfButtonPressedEvent>(pdfButtonPressedEvent);
     on<PdfNextButtonPressedEvent>(pdfNextButtonPressedEvent);
@@ -18,15 +19,15 @@ class PdfBloc extends Bloc<PdfEvent, PdfState> {
       InitialPdfEvent event, Emitter<PdfState> emit) async {
     print("InitialPdfEvent");
     emit(PdfInitial());
-    emit(await PdfLoadingSuccess(
-        pdfModel: PdfModel(fileName: event.initialFileName)));
+    pdfModel = PdfModel(fileName: event.initialFileName);
+    emit(PdfLoadingSuccess(pdfModel: pdfModel));
   }
 
   FutureOr<void> pdfButtonPressedEvent(
       PdfButtonPressedEvent event, Emitter<PdfState> emit) async {
     emit(PdfLoading());
 
-    PdfModel pdfModel = PdfModel(fileName: event.fileName);
+    pdfModel = PdfModel(fileName: event.fileName);
     if (await pdfModel.isLocal()) {
       // local sync fusion rendering
       emit(PdfLoadingSuccess(pdfModel: pdfModel));
@@ -40,14 +41,13 @@ class PdfBloc extends Bloc<PdfEvent, PdfState> {
   FutureOr<void> pdfNextButtonPressedEvent(
       PdfNextButtonPressedEvent event, Emitter<PdfState> emit) async {
     emit(PdfLoading());
+    pdfModel = PdfModel(fileName: pdfModel.nextPdf(event.isNextPage));
 
-    PdfModel currPdfModel = PdfModel(fileName: event.fileName);
-    String nextPdfpath = currPdfModel.nextPdf(event.isNextPage);
-    PdfModel nextPdfModel = PdfModel(fileName: nextPdfpath);
-
-    if (await nextPdfModel.isLocal()) {
+    print("pdfNextButtonPressedEvent");
+    print(pdfModel.fileName);
+    if (await pdfModel.isLocal()) {
       // local sync fusion rendering
-      emit(PdfLoadingSuccess(pdfModel: nextPdfModel));
+      emit(PdfLoadingSuccess(pdfModel: pdfModel));
     } else {
       // downloading
       // make changes to networking.dart to support this

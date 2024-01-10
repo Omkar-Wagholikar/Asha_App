@@ -1,5 +1,4 @@
 import 'package:asha_fe/Components/appbar.dart';
-import 'package:asha_fe/Constants/theme.dart';
 import 'package:asha_fe/PdfPage/bloc/pdf_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,13 +14,12 @@ class PdfPage extends StatefulWidget {
 }
 
 class _PdfPageState extends State<PdfPage> {
-  final PdfBloc pdfBloc = PdfBloc();
-  late PdfModel pdfModel;
+  final PdfBloc pdfBloc = PdfBloc(pdfModel: PdfModel(fileName: ""));
   @override
   void initState() {
     super.initState();
     pdfBloc.add(InitialPdfEvent(widget.fileName));
-    pdfModel = PdfModel(fileName: widget.fileName);
+    pdfBloc.pdfModel = PdfModel(fileName: widget.fileName);
   }
 
   @override
@@ -29,16 +27,14 @@ class _PdfPageState extends State<PdfPage> {
     return BlocProvider(
       create: (BuildContext context) => pdfBloc,
       child: Scaffold(
-        appBar: const AshaAppBar(
-            appBarText: 'Asha App',
-            appBarIconPath: "assets/images/PKC-logo.png"),
+        appBar: const AshaAppBar(),
         body: Center(
           child: BlocBuilder<PdfBloc, PdfState>(builder: (context, state) {
             if (state is PdfInitial || state is PdfLoading) {
               return const CircularProgressIndicator();
             } else if (state is PdfLoadingSuccess) {
               print("state is PdfLoadingSuccess");
-              print(pdfModel.nextPdf(true));
+              print(pdfBloc.pdfModel.nextPdf(true));
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -52,19 +48,21 @@ class _PdfPageState extends State<PdfPage> {
                       children: [
                         IconButton(
                           onPressed: () => {
-                            pdfModel =
-                                PdfModel(fileName: pdfModel.nextPdf(false)),
-                            pdfBloc.add(PdfButtonPressedEvent(
-                                fileName: pdfModel.fileName)),
+                            // pdfModel =
+                            //     PdfModel(fileName: pdfModel.nextPdf(false)),
+                            // pdfBloc.add(PdfButtonPressedEvent(
+                            //     fileName: pdfModel.fileName)),
+                            pdfBloc.add(PdfNextButtonPressedEvent(
+                                isNextPage: false,
+                                fileName: pdfBloc.pdfModel.fileName)),
                           },
                           icon: const Icon(Icons.arrow_back_ios),
                         ),
                         IconButton(
                           onPressed: () => {
-                            pdfModel =
-                                PdfModel(fileName: pdfModel.nextPdf(true)),
-                            pdfBloc.add(PdfButtonPressedEvent(
-                                fileName: pdfModel.fileName)),
+                            pdfBloc.add(PdfNextButtonPressedEvent(
+                                isNextPage: true,
+                                fileName: pdfBloc.pdfModel.fileName)),
                           },
                           icon: const Icon(Icons.arrow_forward_ios),
                         )
@@ -72,9 +70,7 @@ class _PdfPageState extends State<PdfPage> {
                 ],
               );
             } else {
-              return Container(
-                child: Text("In $state"),
-              );
+              return Text("In $state");
             }
           }),
         ),

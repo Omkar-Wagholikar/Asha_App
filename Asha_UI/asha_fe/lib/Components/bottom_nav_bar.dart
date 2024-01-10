@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AshaBottomNavBar extends StatefulWidget {
+  const AshaBottomNavBar({super.key});
+
   @override
   State<AshaBottomNavBar> createState() => _AshaBottomNavBarState();
 }
@@ -10,7 +12,7 @@ class _AshaBottomNavBarState extends State<AshaBottomNavBar> {
   // Move this line outside the build method
   @override
   Widget build(BuildContext context) {
-    void _onItemTapped(int index) {
+    void onItemTapped(int index) {
       print(index);
     }
 
@@ -26,7 +28,7 @@ class _AshaBottomNavBarState extends State<AshaBottomNavBar> {
         ),
       ],
       currentIndex: selectedIndex,
-      onTap: _onItemTapped,
+      onTap: onItemTapped,
     );
   }
 }

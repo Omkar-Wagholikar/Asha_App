@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 import '../Constants/theme.dart';
@@ -7,11 +5,13 @@ import '../pdf_page_with_nav.dart';
 import '../Utils/networking.dart';
 
 class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String appBarText;
-  final String appBarIconPath;
+  final String appBarText = 'Asha App';
+  final String appBarIconPath = 'assets/images/PKC-logo.png';
 
   const AshaAppBar(
-      {super.key, required this.appBarText, required this.appBarIconPath});
+      // appBarText: 'Asha App',
+      // appBarIconPath: "assets/images/PKC-logo.png"
+      {super.key});
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
@@ -133,7 +133,7 @@ class PopUpWidget extends StatelessWidget {
                 if (linkController.text != "") {
                   final LocalStorage storage = LocalStorage('url.json');
                   await storage.setItem('_url', linkController.text);
-                  log(linkController.text + "saved");
+                  print("${linkController.text}saved");
                   Navigator.of(context).pop();
                 } else {
                   linkController.text = "please provide link";

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color appTheme = Color.fromARGB(255, 2, 92, 133);
-  static Color appBar = Color.fromARGB(255, 2, 109, 145);
+  static Color appTheme = const Color.fromARGB(255, 2, 92, 133);
+  static Color appBar = const Color.fromARGB(255, 2, 109, 145);
   static Color iconsLightTheme = Colors.white;
   static Color fontLight = Colors.white;
 }

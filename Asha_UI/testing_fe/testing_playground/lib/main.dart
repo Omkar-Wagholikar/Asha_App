@@ -76,10 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 }
               },
             ),
-            // ButtonToPDF(
-            //     name: "name",
-            //     render: SfPdfViewer.network(
-            //         "http://localhost:7000/api/pdf/book-no-4-page-24.pdf/")),
+            ButtonToPDF(
+                name: "name",
+                render: SfPdfViewer.network(
+                    "http://localhost:8000/api/pdf/book-no-4-page-24.pdf/")),
             TextButton(
               child: const Text("sfpdfv_network"),
               onPressed: () {

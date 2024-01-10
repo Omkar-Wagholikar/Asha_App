@@ -1,6 +1,5 @@
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
-// import 'MainPage.dart';
 import 'MainPage/pages/search_page.dart';
 
 void main() {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/result_tile.dart';
-import '../../Utils/web_exp.dart';
 import '../bloc/search_bloc.dart';
 
 class SearchPage extends StatefulWidget {
@@ -106,15 +105,6 @@ class _SearchPageState extends State<SearchPage> {
             },
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.settings_input_antenna_rounded),
-            onPressed: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const WebViewExample()),
-                  )
-                }),
       ),
     );
   }

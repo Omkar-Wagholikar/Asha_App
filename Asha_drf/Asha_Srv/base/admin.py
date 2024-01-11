@@ -6,4 +6,4 @@ from .models import *
 
 admin.site.register(QueryLog)
 admin.site.register(ErrorLog)
-# admin.site.register(User)
+admin.site.register(FileModel)

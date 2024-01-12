@@ -1,3 +1,4 @@
+import 'package:asha_fe/AboutPage/pages/about_page.dart';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 import '../Constants/theme.dart';
@@ -5,9 +6,11 @@ import '../pdf_page_with_nav.dart';
 import '../Utils/networking.dart';
 
 class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String appBarText = 'Asha App';
+  final String appBarText = 'ASHA ';
+  final String appBarTextHindi = 'साथी';
   final String appBarIconPath = 'assets/images/PKC-logo.png';
-
+  final double vertIconPadding = 2;
+  final double horiIconPadding = 8;
   const AshaAppBar(
       // appBarText: 'Asha App',
       // appBarIconPath: "assets/images/PKC-logo.png"
@@ -21,27 +24,40 @@ class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 4,
       backgroundColor: AppColors.appBar,
       leading: Padding(
-        padding: const EdgeInsets.all(2.0),
+        padding: EdgeInsets.fromLTRB(
+            horiIconPadding, vertIconPadding, vertIconPadding, horiIconPadding),
         child: Image.asset(appBarIconPath),
       ),
-      title: Text(
-        appBarText,
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 34,
-            color: AppColors.fontLight,
-            fontFamily: "opensans light"),
+      title: Row(
+        children: [
+          Text(
+            appBarText,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                // fontSize: ,
+                color: AppColors.fontLight,
+                fontFamily: "opensans light"),
+          ),
+          Text(
+            appBarTextHindi,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontFamily: "opensans light",
+              color: AppColors.fontLight,
+            ),
+          ),
+        ],
       ),
       actions: const [
-        PopUpWidget(),
+        PopUpMenuWidget(),
       ],
     );
   }
 }
 
-class PopUpWidget extends StatelessWidget {
-  const PopUpWidget({super.key});
+class PopUpMenuWidget extends StatelessWidget {
+  const PopUpMenuWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,24 +102,46 @@ class PopUpWidget extends StatelessWidget {
             ],
           ),
         ),
+        PopupMenuItem(
+          value: 4,
+          child: Row(
+            children: [
+              Icon(AppIcons.aboutPage),
+              const SizedBox(
+                width: 10,
+              ),
+              const Text("About Page")
+            ],
+          ),
+        ),
       ],
       offset: const Offset(0, 100),
       color: AppColors.iconsLightTheme,
       elevation: 4,
       // on selected we show the dialog box
       onSelected: (value) {
-        // if value 1 show dialog
         if (value == 1) {
+          // if value 1 show dialog
           _showPdfPage(context);
         } else if (value == 2) {
-          print("Updating links");
+          // Updating links
           _showLinkUpdate(context);
-          // if value 2 show dialog
         } else if (value == 3) {
+          // Reporting error
           print("Reporting errors");
           _showReportError(context);
+        } else if (value == 4) {
+          //show about page
+          _showAboutPage(context);
         }
       },
+    );
+  }
+
+  void _showAboutPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AboutPage()),
     );
   }
 

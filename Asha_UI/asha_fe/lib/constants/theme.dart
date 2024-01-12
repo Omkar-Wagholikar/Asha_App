@@ -12,4 +12,5 @@ class AppIcons {
   static IconData appBarMenu = Icons.more_vert;
   static IconData updateLinkPopUp = Icons.link;
   static IconData errorPopUp = Icons.error_outline_outlined;
+  static IconData aboutPage = Icons.add_box_outlined;
 }

@@ -25,6 +25,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (BuildContext context) => searchBloc,
       child: Scaffold(
@@ -42,21 +43,27 @@ class _SearchPageState extends State<SearchPage> {
                       Column(
                         // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          const SizedBox(
+                            height: 10,
+                          ),
                           SizedBox(
-                            width: 250,
+                            width: width,
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: TextField(
                                 controller: queryController,
                                 decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
                                   labelText: 'Query',
                                 ),
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: height * 0.02,
+                            height: height * 0.01,
                           ),
                           ElevatedButton(
                             onPressed: () {
@@ -64,7 +71,28 @@ class _SearchPageState extends State<SearchPage> {
                               searchBloc.add(SearchButtonPressedEvent(
                                   query: queryController.text));
                             },
-                            child: const Text('Search'),
+                            style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16), // Padding around the text
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(8), // Border radius
+                              ),
+                              elevation: 3, // Elevation (shadow)
+                            ),
+                            child: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.search), // Optional: Add an icon
+                                SizedBox(
+                                    width:
+                                        8), // Add spacing between icon and text
+                                Text(
+                                  'Search',
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
                           ),
                           if (state.searchModel.answer.isNotEmpty)
                             BlocProvider.value(

@@ -29,6 +29,8 @@ class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Image.asset(appBarIconPath),
       ),
       title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             appBarText,
@@ -77,16 +79,28 @@ class PopUpMenuWidget extends StatelessWidget {
             ],
           ),
         ),
+        // PopupMenuItem(
+        //   value: 2,
+        //   // row with 2 children
+        //   child: Row(
+        //     children: [
+        //       Icon(AppIcons.updateLinkPopUp),
+        //       const SizedBox(
+        //         width: 10,
+        //       ),
+        //       const Text("Update Link")
+        //     ],
+        //   ),
+        // ),
         PopupMenuItem(
           value: 2,
-          // row with 2 children
           child: Row(
             children: [
-              Icon(AppIcons.updateLinkPopUp),
+              Icon(AppIcons.bookmarkedPages),
               const SizedBox(
                 width: 10,
               ),
-              const Text("Update Link")
+              const Text("Saved pages")
             ],
           ),
         ),
@@ -125,7 +139,10 @@ class PopUpMenuWidget extends StatelessWidget {
           _showPdfPage(context);
         } else if (value == 2) {
           // Updating links
-          _showLinkUpdate(context);
+          // _showLinkUpdate(context);
+
+          // Saved links and pages
+          _showBookMarks(context);
         } else if (value == 3) {
           // Reporting error
           print("Reporting errors");
@@ -136,6 +153,16 @@ class PopUpMenuWidget extends StatelessWidget {
         }
       },
     );
+  }
+
+  void _showBookMarks(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return const AlertDialog(
+            title: Text("Work in progress"),
+          );
+        });
   }
 
   void _showAboutPage(BuildContext context) {

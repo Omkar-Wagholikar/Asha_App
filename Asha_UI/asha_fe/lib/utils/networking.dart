@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:localstorage/localstorage.dart';
+// import 'package:localstorage/localstorage.dart';
 
 class Networking {
   static Future<Map<String, dynamic>> fetchData(String query) async {
     try {
-      final LocalStorage storage = LocalStorage('url.json');
+      // final LocalStorage storage = LocalStorage('url.json');
 
-      print("Using the url: ${await storage.getItem('_url')}");
+      // print("Using the url: ${await storage.getItem('_url')}");
 
-      final uri = Uri.parse(await storage.getItem('_url') + '/answer/');
+      final uri = Uri.parse('http://202.52.53.125:4000/answer/');
 
       Map<String, dynamic> body = {"query": query};
       var response = await http.post(
@@ -28,11 +28,11 @@ class Networking {
 
   static Future<Map<String, dynamic>> reportError(String reportedError) async {
     try {
-      final LocalStorage storage = LocalStorage('url.json');
+      // final LocalStorage storage = LocalStorage('url.json');
 
-      print("Using the url: ${await storage.getItem('_url')}");
+      // print("Using the url: ${await storage.getItem('_url')}");
 
-      final uri = Uri.parse(await storage.getItem('_url') + '/reportError/');
+      final uri = Uri.parse('http://202.52.53.125:4000/reportError/');
 
       Map<String, dynamic> body = {"error": reportedError};
       var response = await http.post(

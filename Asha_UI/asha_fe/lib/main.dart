@@ -1,7 +1,6 @@
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'MainPage/pages/search_page.dart';
-import 'glass_morphic_container.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

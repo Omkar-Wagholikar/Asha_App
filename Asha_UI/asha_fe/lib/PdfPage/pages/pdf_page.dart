@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/PdfPage/bloc/pdf_bloc.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +43,11 @@ class _PdfPageState extends State<PdfPage> {
                   Expanded(
                     child: BlocProvider.value(
                         value: pdfBloc,
-                        child: SfPdfViewer.asset(state.pdfModel.filePath)),
+                        child: SfPdfViewer.file(File(
+                            "/storage/emulated/0/Android/data/com.example.asha_fe/files/data/user/0/com.example.asha_fe/files/book-no-2-page-12.pdf"))
+                        // child: SfPdfViewer.asset(
+                        //     "/storage/emulated/0/Android/data/com.example.asha_fe/files/data/user/0/com.example.asha_fe/files/book-no-2-page-12.pdf")
+                        ),
                   ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../animation_test.dart';
 import '../../glass_morphic_container.dart';
-import '../widgets/result_tile.dart';
 import '../bloc/search_bloc.dart';
 
 class SearchPage extends StatefulWidget {

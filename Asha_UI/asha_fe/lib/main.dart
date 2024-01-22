@@ -1,6 +1,7 @@
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'MainPage/pages/search_page.dart';
+import 'glass_morphic_container.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,22 +20,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.appTheme),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      // home: const SearchPage(),
+      home: Stack(
+        children: [
+          Image.asset(
+            "assets/images/v5.jpeg",
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          ),
+          const SearchPage(),
+        ],
+      ),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
-    return const SearchPage();
   }
 }

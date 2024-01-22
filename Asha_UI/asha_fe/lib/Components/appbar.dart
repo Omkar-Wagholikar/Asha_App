@@ -30,7 +30,6 @@ class AshaAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             appBarText,

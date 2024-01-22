@@ -5,6 +5,8 @@ class AppColors {
   static Color appBar = const Color.fromARGB(255, 2, 109, 145);
   static Color iconsLightTheme = Colors.white;
   static Color fontLight = Colors.white;
+  static Color textLight = Colors.white;
+  static Color textDark = Colors.black;
 }
 
 class AppIcons {

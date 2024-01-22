@@ -1,7 +1,10 @@
 import 'package:asha_fe/Components/appbar.dart';
+import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../animation_test.dart';
+import '../../glass_morphic_container.dart';
 import '../widgets/result_tile.dart';
 import '../bloc/search_bloc.dart';
 
@@ -29,6 +32,7 @@ class _SearchPageState extends State<SearchPage> {
     return BlocProvider(
       create: (BuildContext context) => searchBloc,
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: const AshaAppBar(),
         body: Center(
           child: BlocBuilder<SearchBloc, SearchState>(
@@ -39,77 +43,83 @@ class _SearchPageState extends State<SearchPage> {
                 // Handle the success state
                 return SingleChildScrollView(
                   child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            width: width,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: TextField(
-                                controller: queryController,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  labelText: 'Query',
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: GlassmorphicContainer(
+                            sigmaX: 4,
+                            sigmaY: 4,
+                            borderRadius: 10,
+                            child: TextField(
+                              controller: queryController,
+                              style: TextStyle(
+                                  color: AppColors.textLight,
+                                  fontWeight: FontWeight.bold),
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: height * 0.01,
+                        ),
+                      ),
+                      SizedBox(
+                        height: height * 0.01,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          print('Searching ${queryController.text}');
+                          searchBloc.add(SearchButtonPressedEvent(
+                              query: queryController.text));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16), // Padding around the text
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(8), // Border radius
                           ),
-                          ElevatedButton(
-                            onPressed: () {
-                              print('Searching ${queryController.text}');
-                              searchBloc.add(SearchButtonPressedEvent(
-                                  query: queryController.text));
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16), // Padding around the text
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(8), // Border radius
-                              ),
-                              elevation: 3, // Elevation (shadow)
+                          elevation: 3, // Elevation (shadow)
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.search), // Optional: Add an icon
+                            SizedBox(
+                                width: 8), // Add spacing between icon and text
+                            Text(
+                              'Search',
+                              style: TextStyle(fontSize: 16),
                             ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.search), // Optional: Add an icon
-                                SizedBox(
-                                    width:
-                                        8), // Add spacing between icon and text
-                                Text(
-                                  'Search',
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                              ],
-                            ),
-                          ),
-                          if (state.searchModel.answer.isNotEmpty)
-                            BlocProvider.value(
-                                value: searchBloc,
-                                child: ListView.builder(
-                                  shrinkWrap: true, // Set shrinkWrap to true
-                                  physics:
-                                      const NeverScrollableScrollPhysics(), // Disable scrolling
-                                  itemCount: state
-                                      .searchModel.answer['answers'].length,
-                                  itemBuilder: (context, index) {
-                                    String pageInfo = state
-                                        .searchModel
-                                        .answer['answers'][index]["meta"]
-                                            ["name"]
-                                        .toString();
-                                    return ExpandableCard(
+                          ],
+                        ),
+                      ),
+                      if (state.searchModel.answer.isNotEmpty)
+                        BlocProvider.value(
+                            value: searchBloc,
+                            child: ListView.builder(
+                              shrinkWrap: true, // Set shrinkWrap to true
+                              physics:
+                                  const NeverScrollableScrollPhysics(), // Disable scrolling
+                              itemCount:
+                                  state.searchModel.answer['answers'].length,
+                              itemBuilder: (context, index) {
+                                String pageInfo = state.searchModel
+                                    .answer['answers'][index]["meta"]["name"]
+                                    .toString();
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: GlassmorphicContainer(
+                                    borderRadius: 10,
+                                    child: AnimExpandableCard(
                                       mainText: state.searchModel
                                           .answer['answers'][index]["answer"],
                                       additionalInfo: state.searchModel
@@ -118,11 +128,11 @@ class _SearchPageState extends State<SearchPage> {
                                           ? pageInfo.substring(
                                               0, pageInfo.length - 4)
                                           : "Error",
-                                    );
-                                  },
-                                ))
-                        ],
-                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ))
                     ],
                   ),
                 );

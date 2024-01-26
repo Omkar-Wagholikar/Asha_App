@@ -36,28 +36,22 @@ class _PdfPageState extends State<PdfPage> {
               return const CircularProgressIndicator();
             } else if (state is PdfLoadingSuccess) {
               print("state is PdfLoadingSuccess");
-              print(pdfBloc.pdfModel.nextPdf(true));
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: BlocProvider.value(
                         value: pdfBloc,
-                        child: SfPdfViewer.file(File(
-                            "/storage/emulated/0/Android/data/com.example.asha_fe/files/data/user/0/com.example.asha_fe/files/book-no-2-page-12.pdf"))
-                        // child: SfPdfViewer.asset(
-                        //     "/storage/emulated/0/Android/data/com.example.asha_fe/files/data/user/0/com.example.asha_fe/files/book-no-2-page-12.pdf")
-                        ),
+                        child: pdfBloc.pdfModel.isAsset
+                            ? SfPdfViewer.asset(pdfBloc.pdfModel.filePath)
+                            : SfPdfViewer.file(
+                                File(pdfBloc.pdfModel.filePath))),
                   ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         IconButton(
                           onPressed: () => {
-                            // pdfModel =
-                            //     PdfModel(fileName: pdfModel.nextPdf(false)),
-                            // pdfBloc.add(PdfButtonPressedEvent(
-                            //     fileName: pdfModel.fileName)),
                             pdfBloc.add(PdfNextButtonPressedEvent(
                                 isNextPage: false,
                                 fileName: pdfBloc.pdfModel.fileName)),

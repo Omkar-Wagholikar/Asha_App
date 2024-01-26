@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class Networking {
   static String url = "http://202.52.53.125:4000";
-  static Future<String> downloadPDF(String pdfName) async {
+  static Future<String> downloadPDFtoFilePath(String pdfName) async {
     try {
       File? file = await FileDownloader.downloadFile(
         url: "$url/api/pdf/$pdfName.pdf",

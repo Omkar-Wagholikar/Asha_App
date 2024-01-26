@@ -1,3 +1,5 @@
+import 'package:asha_fe/Components/glass_morphic_container.dart';
+import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 
 class TextContainer extends StatelessWidget {
@@ -12,38 +14,41 @@ class TextContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black,
-            width: 2.0,
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            border: Border.all(color: Colors.white)),
+        child: GlassmorphicContainer(
+          borderRadius: 10,
+          sigmaX: 4,
+          sigmaY: 4,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "opensans light",
+                    color: AppColors.fontLight,
+                  ),
+                ),
+              ),
+              const Divider(
+                  color: Colors.white), // Add a divider for separation
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  context_,
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: "opensans light",
+                      color: AppColors.fontLight),
+                ),
+              ),
+            ],
           ),
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "opensans light",
-                ),
-              ),
-            ),
-            const Divider(color: Colors.black), // Add a divider for separation
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                context_,
-                style: const TextStyle(
-                  fontSize: 16.0,
-                  fontFamily: "opensans light",
-                ),
-              ),
-            ),
-          ],
         ),
       ),
     );

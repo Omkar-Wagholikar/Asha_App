@@ -1,12 +1,10 @@
-import 'dart:io';
-
 import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/PdfPage/bloc/pdf_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 import '../data/pdf_model.dart';
+import '../widgets/pdf_display.dart';
 
 class PdfPage extends StatefulWidget {
   final String fileName;
@@ -42,10 +40,9 @@ class _PdfPageState extends State<PdfPage> {
                   Expanded(
                     child: BlocProvider.value(
                         value: pdfBloc,
-                        child: pdfBloc.pdfModel.isAsset
-                            ? SfPdfViewer.asset(pdfBloc.pdfModel.filePath)
-                            : SfPdfViewer.file(
-                                File(pdfBloc.pdfModel.filePath))),
+                        child: ShowPdf(
+                            filePath: pdfBloc.pdfModel.filePath,
+                            isAsset: pdfBloc.pdfModel.isAsset)),
                   ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

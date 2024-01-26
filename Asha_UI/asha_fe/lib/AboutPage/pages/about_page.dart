@@ -8,24 +8,33 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AshaAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TextContainer(
-                title: AboutData.aimTitle, context_: AboutData.aimContext),
-            TextContainer(
-                title: AboutData.sourceTitle,
-                context_: AboutData.sourceContext),
-            TextContainer(
-                title: AboutData.ackTitle, context_: AboutData.ackContext),
-            TextContainer(
-                title: AboutData.partnerTitle,
-                context_: AboutData.partnerContext),
-          ],
+    return Stack(children: [
+      Image.asset(
+        "assets/images/asha_bg.jpeg",
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        fit: BoxFit.cover,
+      ),
+      Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: const AshaAppBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextContainer(
+                  title: AboutData.aimTitle, context_: AboutData.aimContext),
+              TextContainer(
+                  title: AboutData.sourceTitle,
+                  context_: AboutData.sourceContext),
+              TextContainer(
+                  title: AboutData.ackTitle, context_: AboutData.ackContext),
+              TextContainer(
+                  title: AboutData.partnerTitle,
+                  context_: AboutData.partnerContext),
+            ],
+          ),
         ),
       ),
-    );
+    ]);
   }
 }

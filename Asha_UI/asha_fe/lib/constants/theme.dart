@@ -7,6 +7,7 @@ class AppColors {
   static Color fontLight = Colors.white;
   static Color textLight = Colors.white;
   static Color textDark = Colors.black;
+  static Color pdfBg = const Color.fromARGB(255, 0, 0, 0);
 }
 
 class AppIcons {

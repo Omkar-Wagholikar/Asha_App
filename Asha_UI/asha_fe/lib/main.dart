@@ -19,11 +19,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.appTheme),
         useMaterial3: true,
       ),
-      // home: const SearchPage(),
       home: Stack(
         children: [
           Image.asset(
-            "assets/images/v5.jpeg",
+            "assets/images/asha_bg.jpeg",
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,

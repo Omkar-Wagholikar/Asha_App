@@ -2,7 +2,7 @@ import 'package:asha_fe/Components/appbar.dart';
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../Components/animation_ans_card.dart';
+import '../widgets/animation_ans_card.dart';
 import '../../Components/glass_morphic_container.dart';
 import '../bloc/search_bloc.dart';
 
@@ -117,7 +117,7 @@ class _SearchPageState extends State<SearchPage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: GlassmorphicContainer(
                                     borderRadius: 10,
-                                    child: AnimExpandableCard(
+                                    child: AnswerCard(
                                       mainText: state.searchModel
                                           .answer['answers'][index]["answer"],
                                       additionalInfo: state.searchModel

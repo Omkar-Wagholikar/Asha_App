@@ -1,23 +1,23 @@
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../PdfPage/pages/pdf_page.dart';
+import '../../PdfPage/pages/pdf_page.dart';
 
-class AnimExpandableCard extends StatefulWidget {
+class AnswerCard extends StatefulWidget {
   final String mainText;
   final String additionalInfo;
   final String pageName;
 
-  const AnimExpandableCard(
+  const AnswerCard(
       {super.key,
       required this.mainText,
       required this.additionalInfo,
       required this.pageName});
   @override
-  State<AnimExpandableCard> createState() => _AnimExpandableCardState();
+  State<AnswerCard> createState() => _AnswerCardState();
 }
 
-class _AnimExpandableCardState extends State<AnimExpandableCard> {
+class _AnswerCardState extends State<AnswerCard> {
   bool _customTileExpanded = false;
   @override
   Widget build(BuildContext context) {
@@ -44,10 +44,14 @@ class _AnimExpandableCardState extends State<AnimExpandableCard> {
             _customTileExpanded = expanded;
           }),
           title: Text(
-            widget.mainText,
+            widget.mainText.length > 70
+                // ? "${widget.mainText.substring(0, 70)}..."
+                ? "${widget.mainText.substring(0, widget.mainText.lastIndexOf(' '))}..."
+                : widget.mainText,
             style: TextStyle(
-                fontWeight:
-                    _customTileExpanded ? FontWeight.bold : FontWeight.normal),
+              fontWeight:
+                  _customTileExpanded ? FontWeight.bold : FontWeight.normal,
+            ),
           ),
           children: <Widget>[
             Container(

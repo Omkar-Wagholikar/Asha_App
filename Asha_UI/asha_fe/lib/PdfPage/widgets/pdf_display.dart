@@ -15,7 +15,7 @@ class ShowPdf extends StatelessWidget {
     return SfPdfViewerTheme(
         data: SfPdfViewerThemeData(
           progressBarColor: AppColors.fontLight,
-          backgroundColor: AppColors.pdfBg,
+          backgroundColor: Colors.transparent,
         ),
         child: isAsset
             ? SfPdfViewer.asset(

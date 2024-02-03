@@ -1,9 +1,18 @@
+import 'package:asha_fe/Constants/hive-boxes.dart';
 import 'package:asha_fe/Constants/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'MainPage/pages/search_page.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox('entry');
+  await Hive.openBox("bookmarks");
+  HiveBoxes.box = Hive.box('entry');
+  HiveBoxes.bookmarks = Hive.box("bookmarks");
+  HiveBoxes.updatePDFAssetValues();
+
   runApp(const MyApp());
 }
 

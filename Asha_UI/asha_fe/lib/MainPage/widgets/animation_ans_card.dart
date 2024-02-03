@@ -7,9 +7,10 @@ class AnswerCard extends StatefulWidget {
   final String mainText;
   final String additionalInfo;
   final String pageName;
-
+  final String query;
   const AnswerCard(
       {super.key,
+      required this.query,
       required this.mainText,
       required this.additionalInfo,
       required this.pageName});
@@ -46,7 +47,7 @@ class _AnswerCardState extends State<AnswerCard> {
           title: Text(
             widget.mainText.length > 70
                 // ? "${widget.mainText.substring(0, 70)}..."
-                ? "${widget.mainText.substring(0, widget.mainText.lastIndexOf(' '))}..."
+                ? "${widget.mainText.substring(0, widget.mainText.substring(0, 70).lastIndexOf(" "))}..."
                 : widget.mainText,
             style: TextStyle(
               fontWeight:
@@ -73,8 +74,9 @@ class _AnswerCardState extends State<AnswerCard> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    PdfPage(fileName: widget.pageName)));
+                                builder: (context) => PdfPage(
+                                    query: widget.query,
+                                    fileName: widget.pageName)));
                       },
                       child: Text(widget.pageName,
                           style: const TextStyle(

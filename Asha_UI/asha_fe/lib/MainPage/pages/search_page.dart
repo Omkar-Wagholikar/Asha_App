@@ -41,7 +41,6 @@ class _SearchPageState extends State<SearchPage> {
                 // Handle the success state
                 return SingleChildScrollView(
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(
                         height: 10,
@@ -55,7 +54,12 @@ class _SearchPageState extends State<SearchPage> {
                             sigmaY: 4,
                             borderRadius: 10,
                             child: TextField(
+                              onSubmitted: (value) {
+                                searchBloc.add(SearchButtonPressedEvent(
+                                    query: queryController.text));
+                              },
                               controller: queryController,
+                              cursorColor: AppColors.fontLight,
                               style: TextStyle(
                                   color: AppColors.textLight,
                                   fontWeight: FontWeight.bold),
@@ -74,7 +78,6 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          print('Searching ${queryController.text}');
                           searchBloc.add(SearchButtonPressedEvent(
                               query: queryController.text));
                         },
@@ -118,6 +121,7 @@ class _SearchPageState extends State<SearchPage> {
                                   child: GlassmorphicContainer(
                                     borderRadius: 10,
                                     child: AnswerCard(
+                                      query: queryController.text,
                                       mainText: state.searchModel
                                           .answer['answers'][index]["answer"],
                                       additionalInfo: state.searchModel

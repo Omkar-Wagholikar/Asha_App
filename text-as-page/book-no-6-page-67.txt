@@ -6,9 +6,9 @@ Simple Skills that Save Lives
 
 Annexe 4: Delivery Form (Fill in the form   completely even in the case of a stillbirth)  
 
-1) When did ASHA arrive at the hospital/woman’s home:    Date: 
+1) When did ASHA arrive at the hospital/womans home:    Date: 
 Time: Hrs_________Min________Early morning/ morning/afternoon/evening/night  
-2) When did woman’s mild labour pain starts?  Date 
+2) When did womans mild labour pain starts?  Date 
 Time: Hrs________Min_________Early morning/ morning/afternoon/evening/night  
 Look for the following danger signs and if present, shift mother immediately to   hospital 
 Danger sign 
@@ -23,7 +23,7 @@ Name: __________________________________________________________
       Name of the village/town: _________________________________________ 
                 Home/Sub-Centre/PHC/CHC/ District Hospital/Private Hospital  
 4 a) Nature of delivery: Normal/Caeserian 
-5) Which part of the baby’s body came out first? Head/Cord/Other 
+5) Which part of the babys body came out first? Head/Cord/Other 
 6) Was the amniotic fluid thick and green/yellow?   Yes/No 
 If yes, was the mouth cavity of baby cleaned with a gauze piece immediately after   head came out?  Yes/No 
 7) When did the baby come out fully? Date: ______________________ 
@@ -46,6 +46,6 @@ Correct/Incorrect
 Correct/Incorrect  
 Yes/No/NA 
 Correct/Incorrect  
-#: Mar ‘Yes’ if necessary   and possible action has   been taken without any   mistake. 
+#: Mar Yes if necessary   and possible action has   been taken without any   mistake. 
 Yes/No/NA 
 Yes/No/NA 

@@ -5,7 +5,7 @@ Simple Skills that Save Lives
 ASHA Module 7 
 
 D. Sepsis Diagnosis:  Check now for the following signs of sepsis: If sign is present mention - Yes, if it is absent mention - No   Record the observations on Day 1 from the first examination of newborn form  
-Date of ASHA’s visit   Day 1  Day 2   Day 3  Day 4  Day 5  Day 6  Day 7  Action by the ASHA  Supervisory   Check  
+Date of ASHAs visit   Day 1  Day 2   Day 3  Day 4  Day 5  Day 6  Day 7  Action by the ASHA  Supervisory   Check  
 All limbs limp  Consider the first three signs as criteria for   diagnosing sepsis only if the sign was absent  
 previously and then it newly developed 
 Yes/No 
@@ -19,11 +19,11 @@ Even if no sign is observed, ask the mother to   keep a watch and call ASHA
 If only one sign is present, visit every day   to check appearance of another sign.   Meanwhile provide management for the   existing problem  
 (See the box at the bottom) 
 Cry weak/stopped 
-Distended abdomen or mother   says ‘baby vomits often’  
-Mother says ‘baby is cold to   tough’ or baby’s temperature   >99 degree F (37.2 degree C) 
+Distended abdomen or mother   says baby vomits often  
+Mother says baby is cold to   tough or babys temperature   >99 degree F (37.2 degree C) 
 Chest in-drawing 
 Pus on umbilicus  
 Total number of criteria present 
 Is it Sepsis   Yes/  No  Yes/  No  Yes/  No  Yes/  No  Yes/  No  Yes/  No 
 Which management of sepsis was accepted by the family? (Circle the correct answer) 
- 1. No treatment 2. Referral 3. Treatment by ASHA 4. Other treatment (specify)… 
+ 1. No treatment 2. Referral 3. Treatment by ASHA 4. Other treatment (specify) 

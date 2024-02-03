@@ -1,5 +1,5 @@
 In your community, the ANM, with your help will undertake screening of all adults of 30   years and above for diabetes. This will take place on a fixed day. Individuals who have   normal blood glucose should be screened once in a year. Any individual diagnosed   with high Blood sugar should be referred to a higher level for further diagnosis and   management.  
-It is the medical officer’s responsibility to develop a treatment plan for the patient, based   on the level of blood glucose and the presence of other conditions such as high levels of   blood pressure and fat. The treatment plan includes not just anti-diabetic medication   but also a plan for addressing any modifiable risk factors. Your role is to ensure that   the patient adheres to the treatment and makes changes in her/his lifestyle to reduce   modifiable risk factors. 
+It is the medical officers responsibility to develop a treatment plan for the patient, based   on the level of blood glucose and the presence of other conditions such as high levels of   blood pressure and fat. The treatment plan includes not just anti-diabetic medication   but also a plan for addressing any modifiable risk factors. Your role is to ensure that   the patient adheres to the treatment and makes changes in her/his lifestyle to reduce   modifiable risk factors. 
 
 Blood Glucose Estimation 
 
@@ -42,7 +42,7 @@ Repeated or severe infections such as   vaginal infections.
 Slow healing of wounds. 
 If the blood glucose stays too high, it can   cause damage to the  
 
-Kidneys – causing kidney failure. 
+Kidneys  causing kidney failure. 
 
 Heart and blood vessel disease -   causing heart attack and stroke. 
 
@@ -50,4 +50,4 @@ Nerves damage - causing numbness,   tingling in hands and/or feet, foot   ulcers
 
 Eyes - causing blindness. 
 
-Oral cavity – causing gum diseases. 
+Oral cavity  causing gum diseases. 

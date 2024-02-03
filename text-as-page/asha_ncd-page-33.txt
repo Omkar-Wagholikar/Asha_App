@@ -27,16 +27,16 @@ Less than or   equal to 90 cm   in men
 Less than or   equal to 80 cm   in women 
 
 l
-  High blood pressure – Hypertension. 
+  High blood pressure  Hypertension. 
 
 l
-  H igh blood sugar – Diabetes. 
+  H igh blood sugar  Diabetes. 
 
 l
   Sleep disorder. 
 
 l
-  Cancer – cancer of breast, cervix, ovary, liver, gallbladder, kidney, colon, rectum and   prostrate. 
+  Cancer  cancer of breast, cervix, ovary, liver, gallbladder, kidney, colon, rectum and   prostrate. 
 
 l
   Diseases of the joints. 
@@ -44,7 +44,7 @@ l
 l
   Lung disorders. 
 
-Diagnosing “Overweight” in Individuals  
+Diagnosing Overweight in Individuals  
 
 In this section, you will learn how to diagnose an overweight individual through   measuring waist circumference. Waist Circumference is a commonly used method to   identify individuals at risk of being overweight at the community level and in the clinics.  
 

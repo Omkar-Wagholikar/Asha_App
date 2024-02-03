@@ -19,6 +19,6 @@ Hypertension Diabetes Oral   Cancer  Breast   Cancer   Cervical   Cancer  COPD  
 C. Treatment Details 
 
 Condition Date of   Diagnosis  Treatment Initiation  Treatment Compliance -  Currently on Treatment  Treatment Discontinued   Other -    Remarks 
-Health   Facility   Date Details Health   Facility   Date of   Visit   Supply of Medicine   Received – Monthly  Side Effects/  Complications  
+Health   Facility   Date Details Health   Facility   Date of   Visit   Supply of Medicine   Received  Monthly  Side Effects/  Complications  
 (if any) 
 Reasons for   Discontinuation  Date of   Discontinuation  

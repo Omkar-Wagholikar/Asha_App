@@ -17,7 +17,7 @@ Number of Practices
 
 Note:   Use the checklist while observing the skills being implemented.  
 When a step is performed correctly, place a tick (
-�
+
 ) in the box. 
 When a step is not performed correctly, place a cross (X) in the  box. 
 Make sure to review the steps where crosses appear, so that performance can be improved. 

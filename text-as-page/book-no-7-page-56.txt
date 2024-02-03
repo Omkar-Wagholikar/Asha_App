@@ -8,16 +8,16 @@ Simple Skills that Save Lives
 
 How common is sepsis and how serious? 
  In rural India, one out of every ten newborns   develops sepsis.  
- Sepsis in the ﬁ rst month of life is very serious, and is   the most common killer of newborns in the ﬁ rst month of life. 
- Without treatment, many babies with sepsis will die; with treatment, most   babies will get be� er, live and grow up normally. 
+ Sepsis in the  rst month of life is very serious, and is   the most common killer of newborns in the  rst month of life. 
+ Without treatment, many babies with sepsis will die; with treatment, most   babies will get be er, live and grow up normally. 
 
 Causes of neonatal sepsis 
  Mother has infection during pregnancy or delivery. 
  Unclean techniques during delivery (poor handwashing, use of unclean   blade or cord ties) can cause sepsis. 
- Cord becomes infected from unclean cu� ing or pu� ing dirty things on it 
+ Cord becomes infected from unclean cu ing or pu ing dirty things on it 
  Baby is weak; born pre-term or with LBW (less than 2000 gm) 
  Baby becomes weak from poor feeding practices; not giving breast milk   early and exclusively. 
- Baby becomes weak – exposed to the cold a� er delivery. 
+ Baby becomes weak  exposed to the cold a er delivery. 
  Baby comes into contact with someone who has an infection: mother,  
 In this module, ASHA will learn to manage asphyxia using a mucus extractor.  
 Objectives of the Session 
@@ -28,4 +28,4 @@ By the end of the session, the ASHA will learn about:
  Identify children who have sepsis. 
  Facilitate immediate referral if required. 
 
-“Sepsis” means infection. In newborn babies, “sepsis” refers to any serious   infection in the baby whether in the lungs, brain or blood. 
+Sepsis means infection. In newborn babies, sepsis refers to any serious   infection in the baby whether in the lungs, brain or blood. 

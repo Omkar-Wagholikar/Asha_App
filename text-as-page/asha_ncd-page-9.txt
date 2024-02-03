@@ -12,6 +12,6 @@ This module will tell you more about these NCDs. It will also guide you on how y
 Let us first understand what we mean by Non-Communicable Diseases? 
 
 NCDs are diseases of long duration. These are non-infectious conditions that cannot be   transmitted to other individuals. Some NCDs progress slowly or cause chronic symptoms   requiring long term care and control while others progress rapidly. They affect adult men   and women but children are vulnerable as well. People may appear healthy but still suffer   from these conditions.  
-One of the most serious concerns about NCDs is that they affect people in the productive   years of their life. They also cause “premature deaths” -  that is, a death occurring before   the average life expectancy. Though NCDs can affect a person at any age, older individuals   are more vulnerable to NCDs. 
+One of the most serious concerns about NCDs is that they affect people in the productive   years of their life. They also cause premature deaths -  that is, a death occurring before   the average life expectancy. Though NCDs can affect a person at any age, older individuals   are more vulnerable to NCDs. 
 
 Module for ASHA on Non-Communicable Diseases 

@@ -11,9 +11,9 @@ Cotrimoxazole  1 Tablet:
 Age of the patient  Amount of tablet  Amount of syrup  Frequency of dose in a day 
 Birth upto <1 months (<3kg)  One fourth tsp (1.25ml)*  Twice a day 
 1month up to 2months (3-4kg) 
-½ 
+ 
 tab (Half tab) 
-½
+
  tsp (2.5ml)  Twice a day 
 2 months-12 months (4-10kgs)  1 tab  Full tsp (5ml)  Twice a day 
 12 months-5 yrs (10-19 kgs)  2 tabs  2 full tsp (10ml) 
@@ -24,7 +24,7 @@ Albendazole
 Age of the patient  Strength of tablet  Amount of tablet  Frequency of dose in a day 
 <1 year  Not to be given 
 1-2 years  400mg 
-½
+
  tab (Half)  Once a day 
 >2 years  400mg 
 Full tab 

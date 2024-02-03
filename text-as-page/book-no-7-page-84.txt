@@ -13,7 +13,7 @@ Age-specific Drug Schedules
 Age (in years)  Day 1  Day 2  Day -3 
 Tab. Chloroquine  Tab. Chloroquine  Tab. Chloroquine 
 <1  1/2  1/2  1/4 
-1-4  1  1  ½1/2 
+1-4  1  1  1/2 
 5-8  2  2  1 
 9-14  3  3  1 
 1/2 
@@ -41,7 +41,7 @@ nd
  Day  (number of tabs)  3
 rd
  Day  (number of tabs) 
-<1 Year*  AS  SP  ½1/2  1/4  1/2  Nil  1/2  Nil 
+<1 Year*  AS  SP  1/2  1/4  1/2  Nil  1/2  Nil 
 1-4 Yeas*  AS  SP  1  1  1  Nil  1  Nil 
 5-8 Year*  AS  SP  2  1
 1/2 

@@ -11,10 +11,10 @@ Sub centre Name          PHC Name
 
 Part A) Family folder 
 
-1.  Household details – 
- i.  Number/ID 
- ii.  Name of Head of the Household 
- iii.  Details of household amenities –   Please specify 
+1.  Household details  
+i.  Number/ID 
+ii.  Name of Head of the Household 
+iii.  Details of household amenities    Please specify 
 a)  Type of house  
 (Kuccha/Pucca with stone and mortar/Pucca with bricks and concrete/or any other specify) 
 b) Availability of toilet  
@@ -27,7 +27,7 @@ e) Motorised vehicle
 (Motor bike/Car/Tractor/or any other specify) 
 f)  Type of fuel used for cooking  
 (Firewood/crop residue/ cow dung cake/ coal/ kerosene/ LPG/ or any other specify) 
-g) Contact details – (Telephone number of head of the family) 
+g) Contact details  (Telephone number of head of the family) 
 
 S.   No  Individual   Name  Aadhaar ID    (if Aadhaar id is not   available please   add details of other   ids like Voter id or   Ration card) 
 Individual Health ID 

@@ -12,9 +12,9 @@ S.No.  Name of   Drug  Symbol*   Balance  Refill   given  Balance  Refill   give
 3 
 4 
 5 
-‘n’ 
+n 
 
-Balance : This is what was le�  in kit at the time of reﬁ ll – a� er recovering   explained drugs/supplies. 
-Reﬁ ll : This is what was put into the kit. 
-*Symbol is a pictorial symbol that could be used to denote a drug, since o� en,   the drugs comes labelled only in English.  
-Card is to be updated by person providing the reﬁ ll. 
+Balance : This is what was le  in kit at the time of re ll  a er recovering   explained drugs/supplies. 
+Re ll : This is what was put into the kit. 
+*Symbol is a pictorial symbol that could be used to denote a drug, since o en,   the drugs comes labelled only in English.  
+Card is to be updated by person providing the re ll. 

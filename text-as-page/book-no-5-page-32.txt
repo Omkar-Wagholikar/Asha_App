@@ -27,7 +27,7 @@ V Child Care and Immunisation Services
 VI Laboratory and Epidemic Management Services 
 1. Is laboratory service available at the PHC? 
 
-Is blood examination for anaemia done at this PHC?— Yes/No 
+Is blood examination for anaemia done at this PHC? Yes/No 
 
 Is detection of malaria parasite by blood smear examination done at this  PHC? Yes/No 
 

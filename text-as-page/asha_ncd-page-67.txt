@@ -14,7 +14,7 @@ Part A: Risk Assessment
 Question   Range   Circle Any Write Score  
 1. What is your age? (in complete years)  30-39 years  0 
 40-49 years   1 
-≥ 50 years  2 
+ 50 years  2 
 2. Do you smoke or consume smokeless   products such as gutka or khaini ?   Never  0 
 Used to consume in the past/  Sometimes now   1 
 Daily   2 
